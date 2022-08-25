@@ -5,9 +5,8 @@ import chalk from 'chalk';
 import helmet from 'helmet';
 // import { MainRouter } from './routes';
 import logger from '../../config/logger';
-import CONST from '../../config/consts';
+import { NAMESPACE } from '../../config/consts';
 const app: express.Application = express();
-const { NAMESPACE } = CONST;
 
 //middlewares
 app.use(express.json({ limit: '50mb' }));
