@@ -11,6 +11,7 @@ declare global {
     }
 }
 
+
 const multipleRouteAuth = (authtype: string) => {
     return asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
         try {

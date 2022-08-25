@@ -1,3 +1,4 @@
+//jwt generation function
 import jwt from 'jsonwebtoken';
 const privateKey = process.env.privateKey as string;
 
