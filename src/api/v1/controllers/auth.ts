@@ -53,13 +53,7 @@ class Auth {
             console.log(e, 'error');
         }
     }
-
-    // async deleteAccount(req: Request, res: Response) {
-    //     try {
-    //     } catch (e) {
-
-    //     }
-    // }
+    
 }
 
 export default Auth;

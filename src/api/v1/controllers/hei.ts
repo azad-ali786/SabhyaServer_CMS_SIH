@@ -1,7 +1,7 @@
 import { InstituteModel } from '../models/institute';
-import { ResourceModel } from '../models/resource';
+import { ResourceModel } from '../models/resources';
 import { Request, Response } from 'express';
-import { filterAndSortFun } from '../services/filterAndSort';
+import { filterAndSortFun } from '../middlewares/filterAndSort';
 import axios from 'axios';
 import authMiddleWare from '../middlewares/auth';
 // import py from "../../../../ML/"
@@ -48,20 +48,7 @@ class Hei {
         }
     }
 
-    // async payments(req: Request, res: Response) {
-    //     try {
-    //         const { filter } = req.body;
-    //         const response = await filterAndSortFun(filter);
-    //         res.status(200).json(response);
-    //     } catch (e) {
-    //         if (e instanceof Error) {
-    //             throw e;
-    //         }
-    //         console.log(e, 'error');
-    //     }
-    // }
-
-    // get
+    
     async myContents(req: Request, res: Response) {
         try {
             const { _id } = req.institute;

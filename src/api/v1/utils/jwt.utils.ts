@@ -12,10 +12,11 @@ export function decode(token: string) {
 
         return { valid: true, expired: false, decoded };
     } catch (error) {
-        return {
-            valid: false,
-            expired: error.message === 'jwt expired',
-            decoded: null
-        };
+        if (error instanceof Error)
+            return {
+                valid: false,
+                expired: error.message === 'jwt expired',
+                decoded: null
+            };
     }
 }
