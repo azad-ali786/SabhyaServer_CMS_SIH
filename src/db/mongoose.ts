@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose"
 import config from '../config/configVar';
 import CONST from '../config/consts';
 import logger from '../config/logger';
