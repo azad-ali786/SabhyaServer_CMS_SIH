@@ -3,7 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import chalk from 'chalk';
 import helmet from 'helmet';
-// import { MainRouter } from './routes';
+import { MainRoute } from './routes';
 import logger from '../../config/logger';
 import { NAMESPACE } from '../../config/consts';
 const app: express.Application = express();
@@ -29,7 +29,7 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
 });
 
 //routes
-// app.use('/', MainRouter);
+app.use('/', MainRoute);
 app.get('/', (req, res) => {
     res.send('rer');
 });
