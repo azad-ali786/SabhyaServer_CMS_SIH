@@ -164,5 +164,5 @@ route.post('/contentDownload', authMiddleWare, async (req: Request, res: Respons
     }
 }); // download not done yet
 
-const MainRoute = route;
-export default MainRoute;
+
+export const MainRoute = route;
