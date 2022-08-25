@@ -48,20 +48,7 @@ class Hei {
         }
     }
 
-    // async payments(req: Request, res: Response) {
-    //     try {
-    //         const { filter } = req.body;
-    //         const response = await filterAndSortFun(filter);
-    //         res.status(200).json(response);
-    //     } catch (e) {
-    //         if (e instanceof Error) {
-    //             throw e;
-    //         }
-    //         console.log(e, 'error');
-    //     }
-    // }
-
-    // get
+    
     async myContents(req: Request, res: Response) {
         try {
             const { _id } = req.institute;
