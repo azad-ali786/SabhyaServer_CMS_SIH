@@ -1,53 +1,12 @@
 import { UserModel } from '../models/user';
 import { InstituteModel } from '../models/institute';
-import { ResourceModel } from '../models/resource';
+import { ResourceModel } from '../models/resources';
 import { Request, Response } from 'express';
-import { filterAndSortFun } from '../services/filterAndSort';
+import { filterAndSortFun } from '../middlewares/filterAndSort';
 import axios from 'axios';
 import authMiddleWare from '../middlewares/auth';
 
-class User {
-    //post
-    // async payments(req: Request, res: Response) {
-    //     try {
-    //         const { filter } = req.body;
-    //         const response = await filterAndSortFun(filter);
-    //         res.status(200).json(response);
-    //     } catch (e) {
-    //         if (e instanceof Error) {
-    //             throw e;
-    //         }
-    //         console.log(e, 'error');
-    //     }
-    // }
-
-    // get
-    // async myContents(req: Request, res: Response) {
-    //     try {
-    //         const { _id } = req.user;
-    //         let response1 = await UserModel.findById({ _id: _id }).populate('subscription');
-    //         let response2 = await UserModel.findByIdAndUpdate(
-    //             { _id: _id },
-    //             {
-    //                 docModel: response1.docModel == 'Institute' ? 'Resource' : 'Institute'
-    //             },
-    //             {
-    //                 new: true
-    //             }
-    //         ).populate('subscription');
-
-    //         const response = [...response1.subscription, ...response2.subscription];
-    //         let result: any[] = [];
-
-    //         res.status(200).json(response);
-    //     } catch (e) {
-    //         if (e instanceof Error) {
-    //             throw e;
-    //         }
-    //         console.log(e, 'error');
-    //     }
-    // }
-
+class User {    
     async mySubscribedContents(req: Request, res: Response) {
         try {
             const { _id } = req.user;
@@ -167,7 +126,6 @@ class User {
         }
     }
 
-
     async subscribeContent(req: Request, res: Response) {
         try {
             const { _id } = req.user;
@@ -243,8 +201,6 @@ class User {
             console.log(e, 'error');
         }
     }
-
-
 }
 
 export default User;

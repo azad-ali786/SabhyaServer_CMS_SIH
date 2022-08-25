@@ -1,7 +1,7 @@
 import { InstituteModel } from '../models/institute';
-import { ResourceModel } from '../models/resource';
+import { ResourceModel } from '../models/resources';
 import { Request, Response } from 'express';
-import { filterAndSortFun } from '../services/filterAndSort';
+import { filterAndSortFun } from '../middlewares/filterAndSort';
 import axios from 'axios';
 import authMiddleWare from '../middlewares/auth';
 // import py from "../../../../ML/"
