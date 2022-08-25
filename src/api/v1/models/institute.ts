@@ -80,19 +80,19 @@ const institute = new mongoose.Schema(
     }
 );
 
-institute.pre('save', async function (next: mongoose.HookNextFunction) {
-    let insti = this as InstitueDoc;
+// institute.pre('save', async function (next: mongoose.HookNextFunction) {
+//     let insti = this as InstitueDoc;
 
-    if (!insti.isModified('hash')) return next();
+//     if (!insti.isModified('hash')) return next();
 
-    if (insti.hash == undefined) {
-        throw new Error('hash is undefined');
-    }
+//     if (insti.hash == undefined) {
+//         throw new Error('hash is undefined');
+//     }
 
-    const hash = await bcrypt.hashSync(insti.hash.toString(), 8);
+//     const hash = await bcrypt.hashSync(insti.hash.toString(), 8);
 
-    insti.hash = hash;
-    return next();
-});
+//     insti.hash = hash;
+//     return next();
+// });
 
 export const InstituteModel = mongoose.model<InstitueDoc>('Institute', institute);

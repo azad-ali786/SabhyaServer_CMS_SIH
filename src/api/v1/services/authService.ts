@@ -93,7 +93,8 @@ class AuthService {
             throw error;
         }
         // bcrypt.
-        const isMatched = await bcrypt.compare(hash, model?.hash!);
+        // const isMatched = await bcrypt.compare(hash, model?.hash!);
+        const isMatched = hash===model?.hash!?true:false;
 
         if (!isMatched) {
             const error: any = new Error('Hash is invalid');
